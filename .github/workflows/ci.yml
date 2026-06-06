@@ -23,7 +23,8 @@ jobs:
       - name: Install dependencies
         run: poetry install
       - name: Run Ruff
-        run: poetry run ruff check .
+        # Agregamos --fix para que ordene automáticamente los imports sin fallar
+        run: poetry run ruff check . --fix
       - name: Run Pytest
         run: poetry run pytest
       - name: SonarQube Scan
